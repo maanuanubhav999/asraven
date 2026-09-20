@@ -30,6 +30,12 @@
     color:#605d5d;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
     text-align:center;padding:12px;
   }
+  .shots-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:2px;background:var(--ink);
+  }
+  .shot-item{aspect-ratio:9/19;background:var(--bg);overflow:hidden}
+  .shot-item img{width:100%;height:100%;object-fit:cover;display:block}
 </style>
 </head>
 <body>
@@ -44,7 +50,7 @@
       </div>
       <div style="font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap">The Boring App</div>
     </a>
-    <a href="#get" class="cta-btn" style="flex:none;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;color:var(--bg);background:var(--accent);padding:10px 15px">Get it</a>
+    <a href="https://play.google.com/store/apps/details?id=com.asraven.theboringapp" target="_blank" rel="noopener" class="cta-btn" style="flex:none;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;color:var(--bg);background:var(--accent);padding:10px 15px">Get it</a>
   </header>
 
   <section id="top" style="border-bottom:2px solid var(--ink);min-height:calc(100svh - 64px);display:flex;flex-direction:column;justify-content:center">
@@ -53,7 +59,7 @@
       <h1 style="margin:0;font-size:clamp(46px,11vw,168px);line-height:.88;letter-spacing:-.05em;max-width:16ch;text-wrap:balance">Why doomscroll when you can be boring?</h1>
       <p style="margin:0;max-width:52ch;font-size:clamp(15px,1.5vw,19px);line-height:1.5;text-wrap:pretty">The Boring App does nothing. You open it, press one button, and put the phone down. It counts how long you last. Everyone else is doing the same thing, badly, and you can see exactly where you rank.</p>
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
-        <a href="#get" class="cta-btn" style="display:inline-flex;align-items:center;gap:12px;background:var(--accent);color:var(--bg);padding:16px 22px;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase">
+        <a href="https://play.google.com/store/apps/details?id=com.asraven.theboringapp" target="_blank" rel="noopener" class="cta-btn" style="display:inline-flex;align-items:center;gap:12px;background:var(--accent);color:var(--bg);padding:16px 22px;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase">
           <span>Get it on Play</span>
           <span style="font-size:17px;line-height:1">→</span>
         </a>
@@ -98,22 +104,16 @@
   </section>
 
   <section style="border-bottom:2px solid var(--ink);display:flex;flex-direction:column">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
-      <div style="aspect-ratio:4/5;border-right:2px solid var(--ink);min-width:0">
-        <!-- Replace with: <img src="../images/theboringapp-shot-1.jpg" alt="Session screen" style="width:100%;height:100%;object-fit:cover"> -->
-        <div class="placeholder-slot">Screenshot<br>session screen</div>
-      </div>
-      <div style="aspect-ratio:4/5;border-right:2px solid var(--ink);min-width:0">
-        <!-- Replace with: <img src="../images/theboringapp-shot-2.jpg" alt="Rankings" style="width:100%;height:100%;object-fit:cover"> -->
-        <div class="placeholder-slot">Screenshot<br>rankings</div>
-      </div>
-      <div style="aspect-ratio:4/5;min-width:0">
-        <!-- Replace with: <img src="../images/theboringapp-shot-3.jpg" alt="Result card" style="width:100%;height:100%;object-fit:cover"> -->
-        <div class="placeholder-slot">Screenshot<br>result card</div>
-      </div>
+    <div class="shots-grid">
+      <div class="shot-item"><img src="images/phone_01_landing.png" alt="Landing screen — Why doomscroll when you can be boring?" loading="lazy"></div>
+      <div class="shot-item"><img src="images/phone_02_active_session.png" alt="Active session timer, ranked #7 most boring today" loading="lazy"></div>
+      <div class="shot-item"><img src="images/phone_03_result_achievement.png" alt="Session result screen with achievement unlocked" loading="lazy"></div>
+      <div class="shot-item"><img src="images/phone_04_share_card.png" alt="Shareable achievement card" loading="lazy"></div>
+      <div class="shot-item"><img src="images/phone_05_profile.png" alt="Profile screen with streak and badges" loading="lazy"></div>
+      <div class="shot-item"><img src="images/phone_06_save_name.png" alt="Save your boringness with a chosen name" loading="lazy"></div>
     </div>
     <div style="background:var(--ink);color:var(--bg);padding:clamp(24px,3vw,40px) clamp(18px,4vw,56px);display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px">
-      <div style="font-weight:800;font-size:clamp(22px,2.6vw,34px);line-height:1.02;letter-spacing:-.035em;max-width:22ch">Four screens. One of them is a number going up.</div>
+      <div style="font-weight:800;font-size:clamp(22px,2.6vw,34px);line-height:1.02;letter-spacing:-.035em;max-width:22ch">Six screens. One of them is a number going up.</div>
       <div style="font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)">The whole app</div>
     </div>
   </section>
@@ -123,18 +123,9 @@
       <div style="font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)">Watch</div>
       <div style="font-size:12.5px">40 seconds. Nothing happens in 34 of them.</div>
     </div>
-    <!--
-        To embed the video, replace this block's contents with an iframe, e.g.:
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" style="width:100%;height:100%;border:0" allowfullscreen></iframe>
-    -->
-    <a href="#" style="width:100%;aspect-ratio:16/9;border:3px solid var(--ink);background:var(--panel);position:relative;display:flex;align-items:center;justify-content:center">
-      <div class="placeholder-slot" style="position:absolute;inset:0">Demo video<br>drop poster frame or clip</div>
-      <div style="position:absolute;inset:0;display:flex;align-items:flex-start;justify-content:flex-end;padding:clamp(14px,2vw,24px);pointer-events:none">
-        <div style="width:clamp(58px,7vw,88px);height:clamp(58px,7vw,88px);background:var(--accent);display:flex;align-items:center;justify-content:center">
-          <div style="width:0;height:0;border-left:clamp(18px,2.2vw,26px) solid var(--bg);border-top:clamp(12px,1.5vw,17px) solid transparent;border-bottom:clamp(12px,1.5vw,17px) solid transparent;margin-left:5px"></div>
-        </div>
-      </div>
-    </a>
+    <div style="width:100%;max-width:380px;margin:0 auto;aspect-ratio:9/16;border:3px solid var(--ink);background:#000;position:relative">
+      <iframe src="https://www.youtube.com/embed/KmTAKMdOXWU" title="The Boring App demo" style="width:100%;height:100%;border:0;display:block" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
   </section>
 
   <section id="reviews" style="border-bottom:2px solid var(--ink);padding:clamp(32px,5vw,64px) clamp(18px,4vw,56px);display:flex;flex-direction:column;gap:clamp(22px,2.6vw,32px)">
@@ -166,7 +157,7 @@
       <div style="font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase">Get the app</div>
       <div style="font-weight:800;font-size:clamp(34px,6vw,72px);line-height:.94;letter-spacing:-.045em;max-width:16ch;text-wrap:balance">Do nothing, competitively.</div>
     </div>
-    <a href="#" class="cta-btn cta-btn-dark" style="display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--bg);padding:18px 24px;flex:none">
+    <a href="https://play.google.com/store/apps/details?id=com.asraven.theboringapp" target="_blank" rel="noopener" class="cta-btn cta-btn-dark" style="display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--bg);padding:18px 24px;flex:none">
       <div style="width:30px;height:30px;background:var(--bg);display:flex;flex-direction:column;justify-content:space-between;padding:3px 4px;flex:none">
         <div style="height:2px;background:var(--accent);width:100%"></div>
         <div style="font-weight:800;font-size:20px;line-height:.78;letter-spacing:-.06em;color:var(--accent)">B</div>
